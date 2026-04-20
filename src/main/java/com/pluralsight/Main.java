@@ -11,7 +11,7 @@ public class Main {
             FileReader goldy = new FileReader("Goldilocks.txt");
             FileReader hansel = new FileReader("hansel_and_gretel.txt");
             FileReader mary = new FileReader("mary_had_a_little_lamb.txt");
-            FileReader selection = null;
+            FileReader selection;
                 System.out.print("Which story would you like?\n1). Goldilocks\n2). Hansel and Gretel\n3). Mary had a little lamb\n4). Quit\nChoice: ");
                 int input = scanner.nextInt();
                 switch (input) {
@@ -27,17 +27,15 @@ public class Main {
                         return;
                     }
                 }
-                if (input <= 3 && input > 0) {
-                    BufferedReader reader = new BufferedReader(selection);
+                BufferedReader reader = new BufferedReader(selection);
 
-                    String line;
-                    int i = 1;
-                    while ((line = reader.readLine()) != null) {
-                        System.out.println(i + ". " + line);
-                        i++;
-                    }
-                    reader.close();
+                String line;
+                int i = 1;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(i + ". " + line);
+                    i++;
                 }
+                reader.close();
                 scanner.close();
                 selection.close();
 
